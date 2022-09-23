@@ -1,0 +1,19 @@
+{
+  "name": "mediavisare",
+  "author": "Fredrik Hjärpe",
+  "description": "Connector",
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "edge": "^7.10.1",
+    "edge-sql": "^0.1.2",
+    "express": "^4.18.1",
+    "msnodesqlv8": "^2.6.0",
+    "mssql": "^9.0.1",
+    "mysql": "^2.18.1",
+    "node": "^18.9.0"
+  },
+  "scripts": {
+    "server": "npx nodemon Connector.js"
+  }
+}
