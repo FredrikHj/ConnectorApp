@@ -1,0 +1,79 @@
+CREATE TABLE categoryincome (
+id int not null,
+name_sv text not null,
+PRIMARY key (id)
+);
+
+INSERT INTO categoryincome (id, name_sv) VALUES
+("1", "Lån från eget konto"),
+("2", "Lön"),
+("3", "Statliga Bidrag"),
+("4", "Tillfällig Överföring mellan konton"),
+("5", "Återbetalning - Skuld till mig"),
+("6", "Återbetalningar"),
+("7", "Övriga Inkomster");
+
+
+
+CREATE TABLE categoryexpenditure (
+id int not null,
+name_sv text not null,
+PRIMARY key (id)
+);
+
+INSERT INTO categoryexpenditure (id, name_sv) VALUES
+("1", "Affärsnätverk"),
+("2", "Badrum/Hall"),
+("3", "Bank Uttag"),
+("4", "Bostad Övrigt"),
+("5", "Bredband, TV & Telefon"),
+("6", "El"),
+("7", "Fika / Lunch / Restaurang"),
+("8", "Förbrukningsartiklar"),
+("9", "Hemelektronik"),
+("10", "Hemförsäkring / Trygghet"),
+("11", "Hemsidor/Webbhotell/Affärsnätverk Övrigt"),
+("12", "Hobbies"),
+("13", "Hyra / Avgifter"),
+("14", "Hämtmat"),
+("15", "ICA Kundkort"),
+("16", "IT Nätverk"),
+("17", "Kablar"),
+("18", "Kläder / Skor"),
+("19 ", "Kollektivt"),
+("20", "Komponenter"),
+("21", "Kontor"),
+("22", "Kringutrstning"),
+("23", "Kök"),
+("24", "Litteratur"),
+("25", "Lån från eget konto"),
+("26", "Mat/Dryck & Livsmedel Övrigt"),
+("27", "Media/Bok/Kultur Övrigt"),
+("28", "Mobil"),
+("29", "Månadssparande"),
+("30", "Nöjen / Shopping Övrigt"),
+("31", "PC Mediaarbeten"),
+("32", "PC Spel"),
+("33", "PC Säkerhetsprogram"),
+("34", "Riksbyggen"),
+("35", "Kommunikation");
+
+
+
+CREATE TABLE paymentoptions (
+id int not null,
+name_sv text not null,
+PRIMARY key (id)
+);
+
+INSERT INTO paymentoptions (id, name_sv) VALUES
+("1", "Autogiro"),
+("2", "Bankkort"),
+("3", "Interna Transaktioner"),
+("4", "Klarna"),
+("5", "Kontant"),
+("6", "Månadsöverföring"),
+("7", "Paypal / SEB Mastercard"),
+("8", "Payson"),
+("9", "SEB - Internetbank"),
+("10", "Visakort");

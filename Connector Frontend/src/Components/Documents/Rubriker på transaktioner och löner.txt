@@ -1,0 +1,3 @@
+Datum	Datum ID	Kategori	Företag	Produkt	Betalningsmetod	Noteringar	Summa
+
+Månad	Lön - Brutto	Annan ersättning	Summa	Skatt (Saldo)	Skatt (Procent)	Lön - Netto 

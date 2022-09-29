@@ -3,30 +3,45 @@ Imports modules */
 import React, { useState, useEffect } from 'react';
 
 import './App.css';
-import { InputForm } from './Components/Component-InputForm';
-import { Label } from './Components/Component-Label';
-import { getRest } from './Components/Data/MathFunctions';
 
+// Import external files 
+import { ExtInputForm, ExtLabel, ExtHeaderView, ExtMainContentView, ExtFooterView, ExtStyleBody  } from './Components/Data/PathForFilesFolder';
+
+// Import file "PropsHandler" 
+import { updateSelectList_DataArr } from './Components/Data/PropsHandler';
+ 
 function App() {
-  let [testCategorie] = useState(500);
+  let [categorieListData] = useState(["Lön","Bidrag","El","TFN","Bredband"]);
   useEffect(() => {
-    console.log(getRest(testCategorie, 450));
-  }, [testCategorie]);
+    updateSelectList_DataArr(categorieListData);
+  }, [categorieListData]);
   
   
   return (
-    <div className="App">
+    <ExtStyleBody.BodyContainer>
 
-      <Label
+      <ExtStyleBody.HeaderContainer>
+        <ExtHeaderView/>
+      </ExtStyleBody.HeaderContainer>
+
+      <ExtStyleBody.ContentContainer>
+        <ExtMainContentView/>
+      </ExtStyleBody.ContentContainer>
+
+      <ExtStyleBody.FooterContainer>
+        <ExtFooterView/>
+      </ExtStyleBody.FooterContainer>
+              
+      <ExtInputForm
+        inputType={ "Text" }
+        inputId={ 0 }
+      />
+      <ExtLabel
         labelName={ "Fredrik" }
         labelId={ 0 }
       />
       <br></br>
-    <InputForm
-        inputType={ "text" }
-        inputId={ 0 }
-    /> 
-  </div>
+  </ExtStyleBody.BodyContainer>
   );
 }
 

@@ -15,4 +15,7 @@ export let totProductOfArr = (arrToCount) =>{
     }
     return productOfArr;
 }
-export let getRest = (categorieBudget, currentCategorieBudget) =>{return categorieBudget%currentCategorieBudget;}
+export let getCategorieMargOrRest = (categorieBudget, currentCategorieBudget) =>{
+    if(currentCategorieBudget < categorieBudget) return categorieBudget-currentCategorieBudget;    
+    if(currentCategorieBudget > categorieBudget) return categorieBudget%currentCategorieBudget;
+}
