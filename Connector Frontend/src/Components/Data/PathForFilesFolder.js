@@ -5,6 +5,7 @@
 import { HeaderView } from '../Individual/View/Component-HeaderView';
 import { MainContentView } from '../Individual/View/Component-MainContentView';
 import { FooterView } from '../Individual/View/Component-FooterView';
+import { CategorieHandlerView } from '../Individual/View/Component-CategorieHandlerView';
 
 
 // Import individual Parts
@@ -25,6 +26,7 @@ import { StyleFooterView } from '../Style/StyleFooterView';
 export const ExtHeaderView = HeaderView;
 export const ExtMainContentView = MainContentView;
 export const ExtFooterView = FooterView;
+export const ExtCategorieHandlerView = CategorieHandlerView;
 
 // Exports parts
 export const ExtInputForm = InputForm;

@@ -1,16 +1,14 @@
 // ==================================== SQLfunctions handling ====================================
 
 //SQL Module
-let sql = require("mssql/msnodesqlv8");
-let sql1 = require("msnodesqlv8");
+let mySql = require('mysql');
 
 // Import the Connection config
 let incommingConfig = require('../Data/ConnectorConfig');
+
 const serverConfig = incommingConfig.connectorConfig;
 
-    
-let dbConfigString = "server=" + serverConfig.backend.winClient + serverConfig.connectingTo.sqlServer.instanceWinClient + ";port=" + serverConfig.connectingTo.sqlServer.database.port + ";Database=" + serverConfig.connectingTo.sqlServer.database.name +";Trusted_Connection=Yes;Driver={SQL Server Native Client 11.0};";
-let query = "SELECT * FROM " + serverConfig.connectingTo.sqlServer.database.table;
+//let query = "SELECT * FROM " + serverConfig.connectingTo.sqlServer.database.table;
 
 // Some useful variables used in the functions bellow 
 let incommingConnectionData = [];
@@ -23,17 +21,31 @@ exports.getConnectionData = () => {
 
 /* =======================================================================================================================
 Headfunction for Connetions*/
-exports.runConnect = (optional, incommingData) => {
-    if (optional === "SQLData") {
-        // Creates a connection between the server and my client 
-        sql1.query(dbConfigString, query, (err, res) =>{
-            console.log(err);
-            if (res) {    
-                incommingConnectionData.push(res);
+exports.runMariaDbConnect = (getSqlQuery) => {
+    // Creates a connection between the server and my client and listen for SQL changes    
+    console.log("Connect for the MariaDB :)");
+    let SQLConn = mySql.createConnection({
+        host: serverConfig.backend.host,
+        user: serverConfig.connectingTo.MariaDb.database.user,
+        password: serverConfig.connectingTo.MariaDb.database.password,
+        port: serverConfig.connectingTo.MariaDb.database.sqlPort,
+        database: serverConfig.connectingTo.MariaDb.database.name,
+        multipleStatements: serverConfig.connectingTo.MariaDb.multipleStatements,
+    });
+    SQLConn.connect(function(err) {
+        if (err) throw err;        
+        SQLConn.query(getSqlQuery, function (error, sqlResult) {
+        console.log("exports.runSQLConn -> sqlResult", sqlResult[0]);
+            //incommingSQLDataArr.push(sqlResult);
+
+            if (err) {
+                return;
             }
-        })
-    }
-    setTimeout(() => { 
-        console.log(incommingConnectionData);
-    }, 1000);
+        }); 
+        // Closing the connection
+        SQLConn.end();
+    });
 }
+setTimeout(() => { 
+    console.log(incommingConnectionData);
+}, 1000);

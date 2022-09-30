@@ -1,0 +1,12 @@
+//SQL Module
+let sql = require("mssql/msnodesqlv8");
+let sql1 = require("msnodesqlv8");
+
+let msDbConfigString = "server=" + serverConfig.backend.winClient + serverConfig.connectingTo.sqlServer.instanceWinClient + ";port=" + serverConfig.connectingTo.sqlServer.database.port + ";Database=" + serverConfig.connectingTo.sqlServer.database.name +";Trusted_Connection=Yes;Driver={SQL Server Native Client 11.0};";
+
+sql1.query(dbConfigString, query, (err, res) =>{
+    console.log(err);
+    if (res) {    
+        incommingConnectionData.push(res);
+    }
+})

@@ -3,7 +3,7 @@ Import  modules */
  import React, { useState, useEffect } from 'react';
 
  // Import external files 
-import { ExtStyleFooterView } from '../../Data/PathForFilesFolder';
+import { ExtStyleMainContentView } from '../../Data/PathForFilesFolder';
 
 // --------------------------- Using Instruction ------------------------------
 // Import file "PropsHandler" 
@@ -24,15 +24,15 @@ import { updateInputForm_Test } from '../../Data/PropsHandler';
 */
 
 
-export let CategorieHandler = () =>{
+export let CategorieHandlerView = () =>{
    
     useEffect(() => {
 
     }, []);
 
     return(
-        <ExtStyleFooterView.ContentContainer>
-            fedsw
-        </ExtStyleFooterView.ContentContainer>
+        <ExtStyleMainContentView.ContentContainerCatView>
+
+        </ExtStyleMainContentView.ContentContainerCatView>
     );
 }

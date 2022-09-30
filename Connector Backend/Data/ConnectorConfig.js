@@ -1,10 +1,10 @@
 exports.connectorConfig = {
     "backend": {
         "port": 3001,
-        "winServer": "TESTSRV01"
+        "host": "TESTSRV01"
     },
     "connectingTo": {
-        "sqlServer": {
+        "msSqlServer": {
             "instanceWinServ": "",
             "instanceWinClient": "\\SQLEXPRESS",
             "trustedConnection": true,
@@ -15,6 +15,18 @@ exports.connectorConfig = {
                 "table": "OrderTestFredrikHj",
                 "user": "OH\\Fredrik.Hjarpe",
                 "password": ""
+            }
+        },
+        "MariaDb": {
+            "multipleStatements": true,
+            "database": {
+                "name": "budgetPlanner",
+                "port": 3306,
+                "tableExpen": "categoryexpenditure",
+                "tableIncome": "categoryincome",
+                "tablePaymentOp": "paymentoptions",
+                "user": "budgetPlanner",
+                "password": "TGHRgrevbdIO6r5"
             }
         }
     }

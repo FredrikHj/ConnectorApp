@@ -12,7 +12,8 @@ app.use(express.json());
     
 let cors = require('cors');
 app.use(cors());
-    
+let incommingSQLQueries = require('./Data/SQLQueries');
+
 // Functions for the Mediavisare backend
 //const getConnectionData = require('/Functions/ReqConnection');
   
@@ -26,10 +27,10 @@ const runConnection = require('./Functions/ReqConnection');
 
 // Middleware
 let reqConnectionData = (req, res, next) => {
-    runConnection.runConnect("SQLData")
-    setTimeout(() => { 
-        res.status(200).send(runConnection.getConnectionData()); 
-    }, 1000);
+    let sendQueryRunConn = incommingSQLQueries.runQuery();
+    console.log("reqConnectionData Middleware" + sendQueryRunConn);
+    runConnection.runMariaDbConnect(sendQueryRunConn);
+    
     
     next();
 }
