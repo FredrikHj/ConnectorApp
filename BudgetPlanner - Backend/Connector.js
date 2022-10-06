@@ -18,8 +18,8 @@ let incommingSQLQueries = require('./Data/SQLQueries');
 //const getConnectionData = require('/Functions/ReqConnection');
   
 // The server config
-const serverConfig = require('./Data/ConnectorConfig');
-const port = serverConfig.connectorConfig.backend.port;
+const serverConfig = require('./Data/ConnectorConfigPath');
+const port = serverConfig.configBackendPort;
 app.listen(port, () => console.log(`MediaVisare is listening on port ${port}!`)); 
 
 //Get Connection Data
@@ -28,11 +28,12 @@ const runConnection = require('./Functions/ReqConnection');
 // Middleware
 let reqConnectionData = (req, res, next) => {
     let sendQueryRunConn = incommingSQLQueries.runQuery();
-    console.log("reqConnectionData Middleware" + sendQueryRunConn);
     runConnection.runMariaDbConnect(sendQueryRunConn);
-    
-    
+
     next();
 }
 app.get('/ReqConnectionData', reqConnectionData, (req, res) => {
+    setTimeout(() => { 
+       res.status(200).send(runConnection.getConnectionData())
+    }, 1000);
 });  

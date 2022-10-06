@@ -20,13 +20,13 @@ exports.connectorConfig = {
         "MariaDb": {
             "multipleStatements": true,
             "database": {
-                "name": "budgetPlanner",
+                "name": "budgetplanner",
                 "port": 3306,
                 "tableExpen": "categoryexpenditure",
                 "tableIncome": "categoryincome",
                 "tablePaymentOp": "paymentoptions",
-                "user": "budgetPlanner",
-                "password": "TGHRgrevbdIO6r5"
+                "user": "adminBPlanner",
+                "password": "dwqe76uumyJYUT"
             }
         }
     }
