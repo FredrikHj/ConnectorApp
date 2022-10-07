@@ -14,6 +14,6 @@
     "node": "^18.9.0"
   },
   "scripts": {
-    "server": "npx nodemon Connector.js"
+    "server": "npx nodemon BudgetPlanner.js"
   }
 }

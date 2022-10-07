@@ -1,3 +1,3 @@
 ﻿Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-cd "C:\Projekt\Connector Frontend"
+cd "C:\Projekt\BudgetPlanner - Frontend"
 npm run dev
