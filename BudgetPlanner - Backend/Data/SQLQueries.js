@@ -1,16 +1,16 @@
 // Import the Database´s config
-let incommingConfigTable = require('./ConnectorConfigPath');
+const incommingConfigTable = require('./ConnectorConfigPath');
 
 // Tables    
-let tableExpen = incommingConfigTable.tableExpen;
-let tableIncome = incommingConfigTable.tableIncome;
-let tablePayment = incommingConfigTable.tablePaymentOpt;
-
+const tableName = incommingConfigTable.tableName;
+const tableExpen = incommingConfigTable.tableExpen;
+const tableIncome = incommingConfigTable.tableIncome;
+const tablePayOptions = incommingConfigTable.tablePaymentOpt;
 
 exports.runQuery = (query, columns, table) => {
     // Request categories
 
-    let sqlquery = `SELECT * FROM ${tableExpen}; SELECT * FROM ${tableIncome}; SELECT * FROM ${tablePayment};`
+    const sqlquery = `SELECT * FROM ${tableName}; SELECT * FROM ${tableIncome}; SELECT * FROM ${tableExpen};  SELECT * FROM ${tablePayOptions};`
     console.log("Query: " + sqlquery);
     return sqlquery;
 }

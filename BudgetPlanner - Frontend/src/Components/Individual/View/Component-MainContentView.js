@@ -3,7 +3,7 @@ Import  modules */
  import React, { useState, useEffect } from 'react';
 
  // Import external files 
- import { ExtStyleMainContentView, ExtDropDownList, ExtCategorieHandlerView } from '../../Data/PathForFilesFolder';
+ import { ExtStyleMainContentView, ExtCategorieHandlerView } from '../../Data/PathForFilesFolder';
 
 // --------------------------- Using Instruction ------------------------------
 // Import file "PropsHandler" 
@@ -32,14 +32,8 @@ export let MainContentView = () =>{
 
     return(
         <>
-            <ExtStyleMainContentView.NavBar>
-                <ExtDropDownList
-                    listName={ "Mixat" }
-                    listId={0}
-                />
-            </ExtStyleMainContentView.NavBar>
             <ExtStyleMainContentView.ContentContainer>
-                <ExtCategorieHandlerView/>
+
             </ExtStyleMainContentView.ContentContainer>
         </>
     );

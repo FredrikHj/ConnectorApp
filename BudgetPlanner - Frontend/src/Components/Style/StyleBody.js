@@ -23,5 +23,9 @@ export let StyleBody = {
     `,
     FooterContainer: styled.section`
         border: 1px solid red;
+        position: fixed;
+        bottom: 0px;
+        width: 80%;
+        margin-left: 10%;
     `
 }

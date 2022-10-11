@@ -1,10 +1,23 @@
-CREATE TABLE categoryincome (
+CREATE TABLE budgetplanner.tablename (
+id int not null,
+tableCol text not null,
+PRIMARY key (id)
+);
+
+INSERT INTO budgetplanner.tablename (id, name_sv) VALUES
+("1", "Inkomster"),
+("2", "Utgifter"),
+("3", "Betalningsalternativ");
+
+
+
+CREATE TABLE budgetplanner.categoryincome (
 id int not null,
 name_sv text not null,
 PRIMARY key (id)
 );
 
-INSERT INTO categoryincome (id, name_sv) VALUES
+INSERT INTO budgetplanner.categoryincome (id, name_sv) VALUES
 ("1", "Lån från eget konto"),
 ("2", "Lön"),
 ("3", "Statliga Bidrag"),
@@ -15,13 +28,13 @@ INSERT INTO categoryincome (id, name_sv) VALUES
 
 
 
-CREATE TABLE categoryexpenditure (
+CREATE TABLE budgetplanner.categoryexpenditure (
 id int not null,
 name_sv text not null,
 PRIMARY key (id)
 );
 
-INSERT INTO categoryexpenditure (id, name_sv) VALUES
+INSERT INTO budgetplanner.categoryexpenditure (id, name_sv) VALUES
 ("1", "Affärsnätverk"),
 ("2", "Badrum/Hall"),
 ("3", "Bank Uttag"),
@@ -60,13 +73,13 @@ INSERT INTO categoryexpenditure (id, name_sv) VALUES
 
 
 
-CREATE TABLE paymentoptions (
+CREATE TABLE budgetplanner.paymentoptions (
 id int not null,
 name_sv text not null,
 PRIMARY key (id)
 );
 
-INSERT INTO paymentoptions (id, name_sv) VALUES
+INSERT INTO budgetplanner.paymentoptions (id, name_sv) VALUES
 ("1", "Autogiro"),
 ("2", "Bankkort"),
 ("3", "Interna Transaktioner"),

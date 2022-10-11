@@ -27,8 +27,8 @@ const runConnection = require('./Functions/ReqConnection');
 
 // Middleware
 let reqConnectionData = (req, res, next) => {
-    let sendQueryRunConn = incommingSQLQueries.runQuery();
-    runConnection.runMariaDbConnect(sendQueryRunConn);
+    let SQLQuery = incommingSQLQueries.runQuery();
+    runConnection.runMariaDbConnect(SQLQuery)
 
     next();
 }
@@ -36,4 +36,5 @@ app.get('/ReqConnectionData', reqConnectionData, (req, res) => {
     setTimeout(() => { 
        res.status(200).send(runConnection.getConnectionData())
     }, 1000);
+    runConnection.resetConnectionData();
 });  

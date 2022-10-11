@@ -10,6 +10,10 @@ import { ExtInputForm, ExtLabel, ExtHeaderView, ExtMainContentView, ExtFooterVie
 // Import file "PropsHandler" 
 import { updateSelectList_DataArr } from './Components/Data/PropsHandler';
  
+
+// Run axiosGetSQL
+import { axiosGet } from './Components/Data/Axios';
+axiosGet();
 function App() {
   let [categorieListData] = useState(["Lön","Bidrag","El","TFN","Bredband"]);
   useEffect(() => {
@@ -31,15 +35,6 @@ function App() {
       <ExtStyleBody.FooterContainer>
         <ExtFooterView/>
       </ExtStyleBody.FooterContainer>
-              
-      <ExtInputForm
-        inputType={ "Text" }
-        inputId={ 0 }
-      />
-      <ExtLabel
-        labelName={ "Fredrik" }
-        labelId={ 0 }
-      />
       <br></br>
   </ExtStyleBody.BodyContainer>
   );

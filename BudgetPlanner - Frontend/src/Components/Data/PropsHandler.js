@@ -9,6 +9,7 @@ import {BehaviorSubject} from "rxjs";
 
     Functions = updateVariables_DataType
 */
+const incommingSqlData = [];
 const inputForm_Test = '';
 const selectList_DataArr = [];
 const selected_DataArrItem = "";
@@ -17,15 +18,21 @@ const selected_DataArrItem = "";
 Using in files:
        import { ImportVariable´s$ } from 'The props file handler';
        Insert into useffect:  
-            ImportVariable´s$.subscribe( ) => {
+            ImportVariables$.subscribe( ) => {
           
             }); 
 */
+export const incommingSqlData$ = new BehaviorSubject(incommingSqlData);
 export const inputForm_Test$ = new BehaviorSubject(inputForm_Test);
 export const selectList_DataArr$ = new BehaviorSubject(selectList_DataArr);
 export const selected_DataArrItem$ = new BehaviorSubject(selected_DataArrItem);
 
 // Functions ===============================================
+export function updateIncommingSqlData(incommingSqlData){
+    console.log(incommingSqlData);
+    if (incommingSqlData) incommingSqlData$.next(incommingSqlData);
+}
+
 export function updateInputForm_Test(inputForm_Test){
     console.log(inputForm_Test);
     if (inputForm_Test) inputForm_Test$.next(inputForm_Test);

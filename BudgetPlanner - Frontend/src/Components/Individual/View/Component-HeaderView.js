@@ -3,11 +3,11 @@ Import  modules */
  import React, { useState, useEffect } from 'react';
 
  // Import external files 
- import { ExtDataHeadLinesText, ExtStyleHeadlinesText } from '../../Data/PathForFilesFolder';
+ import { ExtDataHeadLinesText, ExtDropDownList, ExtStyleHeadlinesText, ExtStyleMainContentView } from '../../Data/PathForFilesFolder';
 
 // --------------------------- Using Instruction ------------------------------
 // Import file "PropsHandler" 
-import { updateInputForm_Test } from '../../Data/PropsHandler';
+import { incommingSqlData$ } from '../../Data/PropsHandler';
 
 /* Perferm the following tasks in the [PathForFilesFolder]:
     1 - Add import { .... } from 'Path to file Filename';
@@ -26,17 +26,36 @@ import { updateInputForm_Test } from '../../Data/PropsHandler';
 
 export let HeaderView = () =>{
     const [ headLines ]=useState(ExtDataHeadLinesText.appName)
+    const [catIncome, updateCatIncome ]=useState([]);
+    const [catExpend, updateCatExpend ]=useState([]);
+    const [catPayOpt, updateCatPayOpt ]=useState([]);
     
     useEffect(() => {
-
+      incommingSqlData$.subscribe((incommingSqlData) => {
+        console.log(incommingSqlData);
+        updateCatIncome(incommingSqlData[0]);
+        updateCatExpend(incommingSqlData[1]);
+        updateCatPayOpt(incommingSqlData[2]);
+      }); 
     }, []);
 
     return(
       <>
         <ExtStyleHeadlinesText.HeadlinesHeader>
-            {
-              headLines
-            }
+          <section>
+            { headLines }
+          </section>
+          <section>        
+            rdfegsrg
+          </section>
+
+          <ExtStyleMainContentView.NavBar>        
+
+          </ExtStyleMainContentView.NavBar>
+          
+          
+
+
         </ExtStyleHeadlinesText.HeadlinesHeader>   
       </>
     );

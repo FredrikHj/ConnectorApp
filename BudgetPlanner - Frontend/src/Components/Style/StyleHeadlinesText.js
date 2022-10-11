@@ -6,5 +6,9 @@ export let StyleHeadlinesText = {
     HeadlinesHeader: styled.section`
         width: 100%;
         font-size: 1.4em;
+        display: flex;
+        flex-direction: row;
+        justify-contents: space-between;
+
     `,
 }

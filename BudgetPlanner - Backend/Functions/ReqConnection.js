@@ -15,8 +15,6 @@ let sendSqlData = [];
 /* =======================================================================================================================
 Headfunction for Connetions*/
 exports.runMariaDbConnect = (getSqlQuery) => {
-    console.log("zdfrbgvd<arf");
-    console.log(getSqlQuery);
     // Creates a connection between the server and my client and listen for SQL changes    
     let SQLConn = mySql.createConnection({
         host: serverConfig.configHost,
@@ -32,21 +30,26 @@ exports.runMariaDbConnect = (getSqlQuery) => {
             console.log("Connect for the MariaDB :)");
             // Sort the incomming data and save it by the namse of the index from the incomming data
             //incommingSQLDataArr.push(sqlResult);
-            
-            sendSqlData.push(sqlResult[1]);
+            console.log("runMariaDbConnect"); 
             sendSqlData.push(sqlResult[0]);
+            sendSqlData.push(sqlResult[1]);
             sendSqlData.push(sqlResult[2]);
+            sendSqlData.push(sqlResult[3]);           
             
-                if (err) {
-                    return;
-                }
-            }); 
-            // Closing the connection
-            SQLConn.end(); 
-        });
-    }
-    
+            
+            if (err) {
+                return;
+            }
+        }); 
+        // Closing the connection
+        SQLConn.end(); 
+    });
+}
 // Exported functions running when called from runSQLConn 
 exports.getConnectionData = () => {
+    console.log("fewas\n",sendSqlData.length);
     return sendSqlData;
+};
+exports.resetConnectionData = () => {
+    sendSqlData = [];
 }
