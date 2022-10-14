@@ -18,7 +18,7 @@ import { dataHeadLinesText } from './Headlines.js';
 
 // Import styling
 import { StyleBody } from '../Style/StyleBody';
-import { StyleHeadlinesText } from '../Style/StyleHeadlinesText.js';
+import { StyleHeader } from '../Style/StyleHeader.js';
 import { StyleMainContentView } from '../Style/StyleMainContentView';
 import { StyleFooterView } from '../Style/StyleFooterView';
 // -------------------------------------------------------------------------------
@@ -38,6 +38,6 @@ export const ExtDataHeadLinesText = dataHeadLinesText;
 
 // Exports styling
 export const ExtStyleBody = StyleBody;
-export const ExtStyleHeadlinesText = StyleHeadlinesText;
+export const ExtStyleHeader = StyleHeader;
 export const ExtStyleMainContentView = StyleMainContentView;
 export const ExtStyleFooterView = StyleFooterView;

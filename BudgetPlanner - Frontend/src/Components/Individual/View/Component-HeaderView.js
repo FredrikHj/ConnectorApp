@@ -1,9 +1,9 @@
 /* ================================================== Input Form ==================================================
 Import  modules */
- import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
- // Import external files 
- import { ExtDataHeadLinesText, ExtDropDownList, ExtStyleHeadlinesText, ExtStyleMainContentView } from '../../Data/PathForFilesFolder';
+// Import external files 
+import { ExtDataHeadLinesText, ExtDropDownList, ExtStyleHeader, ExtStyleMainContentView } from '../../Data/PathForFilesFolder';
 
 // --------------------------- Using Instruction ------------------------------
 // Import file "PropsHandler" 
@@ -26,37 +26,46 @@ import { incommingSqlData$ } from '../../Data/PropsHandler';
 
 export let HeaderView = () =>{
     const [ headLines ]=useState(ExtDataHeadLinesText.appName)
-    const [catIncome, updateCatIncome ]=useState([]);
-    const [catExpend, updateCatExpend ]=useState([]);
-    const [catPayOpt, updateCatPayOpt ]=useState([]);
+    const [ navBarHeadlines, updateNavBarHeadlines ]=useState();
+
     
     useEffect(() => {
       incommingSqlData$.subscribe((incommingSqlData) => {
-        console.log(incommingSqlData);
-        updateCatIncome(incommingSqlData[0]);
-        updateCatExpend(incommingSqlData[1]);
-        updateCatPayOpt(incommingSqlData[2]);
+        console.log(incommingSqlData[4]);
+        updateNavBarHeadlines(incommingSqlData[4]);
+
+
       }); 
     }, []);
 
     return(
       <>
-        <ExtStyleHeadlinesText.HeadlinesHeader>
-          <section>
-            { headLines }
-          </section>
-          <section>        
-            rdfegsrg
-          </section>
+        <ExtStyleHeader.ContentContainerRow1>
+          <ExtStyleHeader.Col1>
+           <ExtStyleHeader.AppName>{ headLines }</ExtStyleHeader.AppName>
+          </ExtStyleHeader.Col1>
+          <ExtStyleHeader.Col2>
+            <ExtStyleHeader.NavBarLink>        
+              {(navBarHeadlines !== undefined)
+                ?
+                navBarHeadlines.map((item, index) => {
+                  return(
+                    <ExtStyleHeader.NavButtons>
+                        <button key={index} id={"navLinks" + index}>{item.name_Sv}</button>
+                    </ExtStyleHeader.NavButtons>
+                  );        
+                })
+                : "......"
+              }
+            </ExtStyleHeader.NavBarLink>
+          </ExtStyleHeader.Col2>
+        </ExtStyleHeader.ContentContainerRow1>
+        
+        <ExtStyleHeader.ContentContainerRow2>
+          <ExtStyleHeader.NavBarButtons>
 
-          <ExtStyleMainContentView.NavBar>        
-
-          </ExtStyleMainContentView.NavBar>
-          
-          
-
-
-        </ExtStyleHeadlinesText.HeadlinesHeader>   
+          </ExtStyleHeader.NavBarButtons>     
+        </ExtStyleHeader.ContentContainerRow2>
       </>
     );
 }

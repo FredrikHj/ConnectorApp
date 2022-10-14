@@ -1,9 +1,9 @@
 /* ================================================== Input Form ==================================================
 Import  modules */
- import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
  // Import external files 
- import { ExtStyleMainContentView, ExtCategorieHandlerView } from '../../Data/PathForFilesFolder';
+import { ExtStyleMainContentView, ExtCategorieHandlerView } from '../../Data/PathForFilesFolder';
 
 // --------------------------- Using Instruction ------------------------------
 // Import file "PropsHandler" 

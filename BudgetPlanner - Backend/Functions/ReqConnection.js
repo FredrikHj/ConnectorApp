@@ -15,7 +15,8 @@ let sendSqlData = [];
 /* =======================================================================================================================
 Headfunction for Connetions*/
 exports.runMariaDbConnect = (getSqlQuery) => {
-    // Creates a connection between the server and my client and listen for SQL changes    
+    // Creates a connection between the server and my client and listen for SQL changes 
+    console.log("runMariaDbConnect=Query", getSqlQuery);   
     let SQLConn = mySql.createConnection({
         host: serverConfig.configHost,
         user: serverConfig.configUser,
@@ -27,16 +28,14 @@ exports.runMariaDbConnect = (getSqlQuery) => {
     SQLConn.connect(function(err) {
         if (err) throw err;        
         SQLConn.query(getSqlQuery, function (error, sqlResult) {
+
+            console.log(sqlResult);
             console.log("Connect for the MariaDB :)");
             // Sort the incomming data and save it by the namse of the index from the incomming data
             //incommingSQLDataArr.push(sqlResult);
             console.log("runMariaDbConnect"); 
-            sendSqlData.push(sqlResult[0]);
-            sendSqlData.push(sqlResult[1]);
-            sendSqlData.push(sqlResult[2]);
-            sendSqlData.push(sqlResult[3]);           
-            
-            
+
+            for (let index = 0; index < sqlResult.length; index++)sendSqlData.push(sqlResult[index]);     
             if (err) {
                 return;
             }

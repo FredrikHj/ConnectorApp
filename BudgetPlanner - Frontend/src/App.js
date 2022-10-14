@@ -10,7 +10,6 @@ import { ExtInputForm, ExtLabel, ExtHeaderView, ExtMainContentView, ExtFooterVie
 // Import file "PropsHandler" 
 import { updateSelectList_DataArr } from './Components/Data/PropsHandler';
  
-
 // Run axiosGetSQL
 import { axiosGet } from './Components/Data/Axios';
 axiosGet();

@@ -1,6 +1,6 @@
 const backend: { port: number, host: string } = {
     port: 3001,
-    host: "TESTSRV01"
+    host: "Asset01"
 };
 
 //const connectingTo:
@@ -22,11 +22,12 @@ const database: {name: string, port: number, table:string, user:string, password
 
 };
 
-const dbTable: {tableExpen: string, tableIncome: string, tablePaymentOp: string, tableName: string} = {
+const dbTable: {tableExpen: string, tableIncome: string, tablePaymentOp: string, tableName: string, tableNavbarlinks: string} = {
     tableName: "tablename",
     tableExpen: "categoryexpenditure",
     tableIncome: "categoryincome",
-    tablePaymentOp: "paymentoptions"
+    tablePaymentOp: "paymentoptions",
+    tableNavbarlinks: "navbarlinks"
 };
 
 export let connectorConfig: {backend: object, sqlServer: object, database: object, dbTable: object} = { 

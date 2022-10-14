@@ -3,7 +3,7 @@ exports.__esModule = true;
 exports.connectorConfig = void 0;
 var backend = {
     port: 3001,
-    host: "TESTSRV01"
+    host: "Asset01"
 };
 //const connectingTo:
 var sqlServer = {
@@ -24,7 +24,8 @@ var dbTable = {
     tableName: "tablename",
     tableExpen: "categoryexpenditure",
     tableIncome: "categoryincome",
-    tablePaymentOp: "paymentoptions"
+    tablePaymentOp: "paymentoptions",
+    tableNavbarlinks: "navbarlinks"
 };
 exports.connectorConfig = {
     backend: backend,

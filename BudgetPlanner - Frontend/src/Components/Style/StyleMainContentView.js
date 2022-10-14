@@ -9,9 +9,5 @@ export let StyleMainContentView = {
     `,
     ContentContainerCatView: styled.section`
     `,
-    NavBar: styled.section`
-        border: 1px solid red;
-        width: 100%;
-        height: 85.5vh; 
-    `,
+
 }

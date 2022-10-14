@@ -32,7 +32,6 @@ export function updateIncommingSqlData(incommingSqlData){
     console.log(incommingSqlData);
     if (incommingSqlData) incommingSqlData$.next(incommingSqlData);
 }
-
 export function updateInputForm_Test(inputForm_Test){
     console.log(inputForm_Test);
     if (inputForm_Test) inputForm_Test$.next(inputForm_Test);

@@ -5,9 +5,10 @@ import styled from 'styled-components';
 export let StyleBody = {
     BodyContainer: styled.section`
         border: 1px solid red;
-        width: 99.8%;
+        max-width: 1900px;
         height: 90vh;
         font-size: 0,9em;
+        margin-left: calc(50%-1900/2px);
     `,
     ContentContainer: styled.section`
         border: 1px solid red;
@@ -20,6 +21,9 @@ export let StyleBody = {
         height: 50px;
         background-color: red; /* For browsers that do not support gradients */
         background-image: linear-gradient(to right, red, yellow);
+        display: flex;
+        flex-direction: column;
+        content-items: center;
     `,
     FooterContainer: styled.section`
         border: 1px solid red;

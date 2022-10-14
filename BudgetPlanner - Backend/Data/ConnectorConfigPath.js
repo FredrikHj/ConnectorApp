@@ -7,6 +7,7 @@ exports.tableName = serverConfig.dbTable.tableName;
 exports.tableExpen = serverConfig.dbTable.tableExpen;
 exports.tableIncome = serverConfig.dbTable.tableIncome;
 exports.tablePaymentOpt = serverConfig.dbTable.tablePaymentOp;
+exports.tableNavBarHeadlines = serverConfig.dbTable.tableNavbarlinks;
 
 // Config
 exports.configBackendPort = serverConfig.backend.port;

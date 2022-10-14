@@ -8,6 +8,16 @@ INSERT INTO budgetplanner.tablename (id, name_sv) VALUES
 ("1", "Inkomster"),
 ("2", "Utgifter"),
 ("3", "Betalningsalternativ");
+("4", "Hantera Kategorier");
+
+
+CREATE TABLE budgetplanner.navbarLinks (
+id int not null,
+name_Sv text not null,
+PRIMARY key (id)
+);
+
+INSERT INTO budgetplanner.navbarLinks (id, name_sv) VALUES ("1", "Kategorier"), ("2", "Kategorier2"), ("3", "Kategorier3"), ("4", "Kategorier4"),
 
 
 
