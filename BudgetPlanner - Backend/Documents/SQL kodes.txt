@@ -1,10 +1,10 @@
-CREATE TABLE budgetplanner.tablename (
+CREATE TABLE budgetplanner.headlines_texts (
 id int not null,
-tableCol text not null,
+name_Sv text not null,
 PRIMARY key (id)
 );
 
-INSERT INTO budgetplanner.tablename (id, name_sv) VALUES
+INSERT INTO budgetplanner.headlines_texts (id, name_sv) VALUES
 ("1", "Inkomster"),
 ("2", "Utgifter"),
 ("3", "Betalningsalternativ");
@@ -100,3 +100,42 @@ INSERT INTO budgetplanner.paymentoptions (id, name_sv) VALUES
 ("8", "Payson"),
 ("9", "SEB - Internetbank"),
 ("10", "Visakort");
+
+
+CREATE TABLE budgetplanner.months_header (
+id int not null,
+monthName_sv text not null,
+col1Name_sv int not null,
+col2Name_sv int not null,
+col3Name_sv int not null,
+PRIMARY key (id)
+);
+
+INSERT INTO budgetplanner.months_header (id, monthName_sv, col1Name_sv, col2Name_sv, col3Name_sv) VALUES
+("1", "Januari", "Beräknad", "Utfall", "Diff"),
+("2", "Februari", "Beräknad", "Utfall", "Diff"),
+("3", "Mars", "Beräknad", "Utfall", "Diff"),
+("4", "April", "Beräknad", "Utfall", "Diff"),
+("5", "Maj", "Beräknad", "Utfall", "Diff"),
+("6", "Juni", "Beräknad", "Utfall", "Diff"),
+("7", "Juli", "Beräknad", "Utfall", "Diff"),
+("8", "Augusti", "Beräknad", "Utfall", "Diff"),
+("9", "September", "Beräknad", "Utfall", "Diff"),
+("10", "Oktober", "Beräknad", "Utfall", "Diff"),
+("11", "November", "Beräknad", "Utfall", "Diff"),
+("12", "December", "Beräknad", "Utfall", "Diff");
+
+
+CREATE TABLE budgetplanner.transactions (
+id int not null,
+timestamp_created text not null,
+timestamp_edit text not null,
+productName text not null,
+payment_options text not null,
+category text not null,
+company text not null,
+cost int not null,
+notes text not null,
+PRIMARY key (id)
+);
+

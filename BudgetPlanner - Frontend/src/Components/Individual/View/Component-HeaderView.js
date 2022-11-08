@@ -3,11 +3,12 @@ Import  modules */
 import React, { useState, useEffect } from 'react';
 
 // Import external files 
-import { ExtDataHeadLinesText, ExtDropDownList, ExtStyleHeader, ExtStyleMainContentView } from '../../Data/PathForFilesFolder';
+import { ExtDataHeadLinesText, ExtStyleHeader } from '../../Data/PathForFilesFolder';
+import { muiLayot, muiHelperObj, muiComponents } from '../../Data/muiHandler';
 
 // --------------------------- Using Instruction ------------------------------
-// Import file "PropsHandler" 
-import { incommingSqlData$ } from '../../Data/PropsHandler';
+// Import file "" 
+import { incommingSqlDataHeadlineTexs$ } from '../../Data/PropsHandler';
 
 /* Perferm the following tasks in the [PathForFilesFolder]:
     1 - Add import { .... } from 'Path to file Filename';
@@ -22,50 +23,35 @@ import { incommingSqlData$ } from '../../Data/PropsHandler';
                 ....
             />
 */
-
-
 export let HeaderView = () =>{
     const [ headLines ]=useState(ExtDataHeadLinesText.appName)
     const [ navBarHeadlines, updateNavBarHeadlines ]=useState();
 
-    
     useEffect(() => {
-      incommingSqlData$.subscribe((incommingSqlData) => {
-        console.log(incommingSqlData[4]);
-        updateNavBarHeadlines(incommingSqlData[4]);
-
-
+      incommingSqlDataHeadlineTexs$.subscribe((sqlDataHeadlineTexs) => {
+        console.log(sqlDataHeadlineTexs);
+        updateNavBarHeadlines(sqlDataHeadlineTexs.navLinks);
       }); 
-    }, []);
+    }, [headLines, navBarHeadlines]);
 
     return(
-      <>
-        <ExtStyleHeader.ContentContainerRow1>
-          <ExtStyleHeader.Col1>
-           <ExtStyleHeader.AppName>{ headLines }</ExtStyleHeader.AppName>
-          </ExtStyleHeader.Col1>
-          <ExtStyleHeader.Col2>
-            <ExtStyleHeader.NavBarLink>        
+      <muiLayot.Grid2 sx={ ExtStyleHeader.ContentContainer}>
+
+          <muiHelperObj.gruidItem sx={ ExtStyleHeader.AppName }>{ headLines }</muiHelperObj.gruidItem>
+          <muiHelperObj.gruidItem sx={ ExtStyleHeader.HeadEmptySpace }></muiHelperObj.gruidItem>
+            <muiHelperObj.gruidItem sx={ExtStyleHeader.NavButtonsGrid }>
               {(navBarHeadlines !== undefined)
                 ?
                 navBarHeadlines.map((item, index) => {
                   return(
-                    <ExtStyleHeader.NavButtons>
-                        <button key={index} id={"navLinks" + index}>{item.name_Sv}</button>
-                    </ExtStyleHeader.NavButtons>
+                    <muiComponents.Button sx={ ExtStyleHeader.NavButtons} key={item.id} id={`navLinks${item.id}`}>
+                      {item.name_Sv}
+                    </muiComponents.Button>
                   );        
                 })
                 : "......"
               }
-            </ExtStyleHeader.NavBarLink>
-          </ExtStyleHeader.Col2>
-        </ExtStyleHeader.ContentContainerRow1>
-        
-        <ExtStyleHeader.ContentContainerRow2>
-          <ExtStyleHeader.NavBarButtons>
-
-          </ExtStyleHeader.NavBarButtons>     
-        </ExtStyleHeader.ContentContainerRow2>
-      </>
+            </muiHelperObj.gruidItem>    
+      </muiLayot.Grid2>
     );
-}
+  }

@@ -3,7 +3,7 @@ Import  modules */
  import React, { useState, useEffect } from 'react';
 
  // Import external files 
-import { ExtStyleMainContentView } from '../../Data/PathForFilesFolder';
+import { ExtStyleMainContentView } from './../Data/PathForFilesFolder';
 
 // --------------------------- Using Instruction ------------------------------
 // Import file "PropsHandler" 

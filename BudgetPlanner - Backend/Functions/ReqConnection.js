@@ -7,10 +7,9 @@ let mySql = require('mysql');
 let serverConfig = require('../Data/ConnectorConfigPath');
 
 // Import the Database´s tables
-
-
+let incommingDbTables = require('../Data/ConnectorConfigPath').dbTables;
 // Some useful variables used in the functions bellow 
-let sendSqlData = [];
+let sendSqlData = {};
 
 /* =======================================================================================================================
 Headfunction for Connetions*/
@@ -34,8 +33,14 @@ exports.runMariaDbConnect = (getSqlQuery) => {
             // Sort the incomming data and save it by the namse of the index from the incomming data
             //incommingSQLDataArr.push(sqlResult);
             console.log("runMariaDbConnect"); 
-
-            for (let index = 0; index < sqlResult.length; index++)sendSqlData.push(sqlResult[index]);     
+            sendSqlData["categorieLists"] = [sqlResult[1], sqlResult[2], sqlResult[3]];
+            sendSqlData["headlinesTexts"] = {
+                navLinks: sqlResult[4]
+            };
+            sendSqlData["compilationHeadLines"] = {
+                compilationCategoriesHeader: sqlResult[0],
+                compilationHeader: sqlResult[5]
+            };
             if (err) {
                 return;
             }
@@ -44,11 +49,11 @@ exports.runMariaDbConnect = (getSqlQuery) => {
         SQLConn.end(); 
     });
 }
+
 // Exported functions running when called from runSQLConn 
 exports.getConnectionData = () => {
-    console.log("fewas\n",sendSqlData.length);
     return sendSqlData;
 };
 exports.resetConnectionData = () => {
-    sendSqlData = [];
+    sendSqlData = {};
 }

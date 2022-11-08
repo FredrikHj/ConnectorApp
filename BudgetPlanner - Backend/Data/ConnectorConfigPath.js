@@ -3,11 +3,7 @@ let incommingConfig = require('./ConnectorConfig');
 const serverConfig = incommingConfig.connectorConfig;
 
 // Tables
-exports.tableName = serverConfig.dbTable.tableName;
-exports.tableExpen = serverConfig.dbTable.tableExpen;
-exports.tableIncome = serverConfig.dbTable.tableIncome;
-exports.tablePaymentOpt = serverConfig.dbTable.tablePaymentOp;
-exports.tableNavBarHeadlines = serverConfig.dbTable.tableNavbarlinks;
+exports.dbTables = serverConfig.dbTable;
 
 // Config
 exports.configBackendPort = serverConfig.backend.port;

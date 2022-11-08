@@ -12,7 +12,8 @@ export let axiosGet = () => {
     ).then(res => {
         console.log(res);
         //  If incomming status of 201 = Created: The Data i push into a arry that is holding the data until the webbbrowser is closed 
-        if (res.status === 200) updateIncommingSqlData(res.data);
+        if (res.status === 200) updateIncommingSqlData(true, res.data);
+        //if (res.status === 403) updateIncommingSqlData(res.data);
     }).
     catch(error => {});
 }

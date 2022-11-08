@@ -1,59 +1,38 @@
-/* ================================================== Style Rouls for AddRecords ==================================================
+/* ================================================== Override for Header ==================================================
 Imports module */
-import styled from 'styled-components';
-
+let dimension = {
+    witdh: 1900,
+    height: 90
+};
 export let StyleHeader = {
-    ContentContainerRow1: styled.section`
-        border: 1px solid red;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-contents: space-between;
-    `,
-    Col1: styled.section`
-        border: 1px solid green;
-        width: 15%;
-
-    `,
-    AppName: styled.section`
-        border: 1px solid green;
-        width: 100%;
-        font-size: 1.4em;
-        text-align: center;
-    `,
-    ContentContainerRow2: styled.section`
-        border: 1px solid red;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    `,
-    Col2: styled.section`
-        border: 1px solid green;
-        width: 85%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    `,
-    NavBarLink: styled.section`
-        border: 1px solid red;
-        width: 50%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    `,
-    NavBarButtons: styled.section`
-        border: 1px solid red;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    `,
-    NavButtons: styled.section`
-        border: 1px solid red;
-        width: 100px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    `,
+    ContentContainer: {
+        height: `${dimension.height*0.06}`, 
+        width: 2500,
+        /*backgroundColor: "red",  For browsers that do not support gradients
+        backgroundImage: "linear-gradient(to right, red, yellow)"*/
+        border: '1px solid red',
+        display: "flex",
+        displayDirection: "row",
+        justifyContent: "space-between",
+    },
+    AppName: {
+        width: 1000,
+        fontSize: 30,
+        textAlign: 'center'
+    },
+    HeadEmptySpace: {
+        width: 1000,
+    },
+    NavButtonsGrid: {
+        border: '1px solid red',
+        width: 2600,
+        display: "flex",
+        displayDirection: "row",
+        justifyContent: "space-between",
+    },
+    NavButtons: {
+        border: '1px solid red',
+        width: 250,
+        fontSize: 15
+    }
 }

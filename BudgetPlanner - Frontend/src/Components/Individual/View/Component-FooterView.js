@@ -4,10 +4,12 @@ import React, { useState, useEffect } from 'react';
 
  // Import external files 
 import { ExtStyleFooterView } from '../../Data/PathForFilesFolder';
+import { muiLayot, muiHelperObj, muiComponents, muiCSS } from '../../Data/muiHandler';
 
 // --------------------------- Using Instruction ------------------------------
 // Import file "PropsHandler" 
 import { updateInputForm_Test } from '../../Data/PropsHandler';
+
 
 /* Perferm the following tasks in the [PathForFilesFolder]:
     1 - Add import { .... } from 'Path to file Filename';
@@ -31,8 +33,10 @@ export let FooterView = () =>{
     }, []);
 
     return(
-        <ExtStyleFooterView.ContentContainer>
-            fedsw
-        </ExtStyleFooterView.ContentContainer>
+        <muiLayot.Container maxWidth="lg" position="bottom">
+            <muiLayot.Box py={6} display="flex" flexWrap="wrap" alignItems="left">
+                <muiCSS.Typography color="textSecondary" component="p" variant="caption" gutterBottom={false}>{`© 2022 Fredrik Hjärpe - All rights reserved`}</muiCSS.Typography>
+            </muiLayot.Box>
+        </muiLayot.Container>
     );
 }

@@ -20,12 +20,14 @@ var database = {
     user: "adminBPlanner",
     password: "dwqe76uumyJYUT"
 };
+// Add a new row for each new tables    
 var dbTable = {
-    tableName: "tablename",
+    tableHeadlines_texts: "headlines_texts",
     tableExpen: "categoryexpenditure",
     tableIncome: "categoryincome",
     tablePaymentOp: "paymentoptions",
-    tableNavbarlinks: "navbarlinks"
+    tableNavbarlinks: "navbarlinks",
+    tableMonths_header: "months_header"
 };
 exports.connectorConfig = {
     backend: backend,

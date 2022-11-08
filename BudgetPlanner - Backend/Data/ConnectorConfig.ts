@@ -22,12 +22,14 @@ const database: {name: string, port: number, table:string, user:string, password
 
 };
 
-const dbTable: {tableExpen: string, tableIncome: string, tablePaymentOp: string, tableName: string, tableNavbarlinks: string} = {
-    tableName: "tablename",
+// Add a new row for each new tables    
+const dbTable: {tableExpen: string, tableIncome: string, tablePaymentOp: string, tableHeadlines_texts: string, tableNavbarlinks: string, tableMonths_header: string} = {
+    tableHeadlines_texts: "headlines_texts",
     tableExpen: "categoryexpenditure",
     tableIncome: "categoryincome",
     tablePaymentOp: "paymentoptions",
-    tableNavbarlinks: "navbarlinks"
+    tableNavbarlinks: "navbarlinks",
+    tableMonths_header: "months_header"
 };
 
 export let connectorConfig: {backend: object, sqlServer: object, database: object, dbTable: object} = { 
