@@ -4,35 +4,40 @@ let dimension = {
     witdh: 1900,
     height: 90
 };
+let fontSizeAppname = 30;
+let fontSizeNavButtons = 17;
+
 export let StyleHeader = {
-    ContentContainer: {
-        height: `${dimension.height*0.06}`, 
-        width: 2500,
+    Container: {
+        display: "flex",
+        displayDirection: "row",
+        justifyContent: "space-between",
+        width: "100%",
         /*backgroundColor: "red",  For browsers that do not support gradients
         backgroundImage: "linear-gradient(to right, red, yellow)"*/
-        border: '1px solid red',
+
+    },
+    ContentContainer: {
+        height: `${dimension.height*0.06}`, 
+        /*backgroundColor: "red",  For browsers that do not support gradients
+        backgroundImage: "linear-gradient(to right, red, yellow)"*/
         display: "flex",
         displayDirection: "row",
         justifyContent: "space-between",
     },
     AppName: {
-        width: 1000,
-        fontSize: 30,
-        textAlign: 'center'
-    },
-    HeadEmptySpace: {
-        width: 1000,
+        width: 300,
+        fontSize: fontSizeAppname,
+        textAlign: 'center',
     },
     NavButtonsGrid: {
-        border: '1px solid red',
-        width: 2600,
+        width: 900,
         display: "flex",
         displayDirection: "row",
         justifyContent: "space-between",
     },
     NavButtons: {
-        border: '1px solid red',
         width: 250,
-        fontSize: 15
+        fontSize: fontSizeNavButtons
     }
 }

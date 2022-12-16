@@ -2,15 +2,16 @@
     Use to import the file with tthe const variable´s you need in that file
     */
 // Import view Parts
-import { HeaderView } from '../Individual/View/Component-HeaderView';
+import { HeaderView } from '../Individual/Views/Component-HeaderView';
 
 
 // Import data files
-import { dataHeadLinesText } from './Headlines.js';
-import { MainContentView } from '../Individual/View/Component-CompilationHeadView';
-import { TableHead } from '../Individual/View/Component-CompilationTableHead';
-import { TableBody } from '../Individual/View/Component-CompilationTableBody';
-import { FooterView } from '../Individual/View/Component-FooterView';
+import { BudgetBalancedOverView } from '../Individual/Views/Component-BudgetCompillationView';
+import { TableHead } from '../Individual/Views/Component-CompilationTableHead';
+import { TableBodyView } from '../Individual/Views/Component-CompilationTableBody';
+import { TransactionsView } from '../Individual/Views/Component-TransactionsView';
+
+import { FooterView } from '../Individual/Views/Component-FooterView';
 
 
 // Import styling
@@ -30,9 +31,11 @@ import { DropDownList } from '../Individual/Parts/Component-DropDownList.js';
 // -------------------------------------------------------------------------------
 //  Exports Views
 export const ExtHeaderView = HeaderView;
-export const ExtMainContentView = MainContentView;
+export const ExtBudgetBalancedOverView = BudgetBalancedOverView;
 export const ExtTableHead = TableHead;
-export const ExtTableBody = TableBody;
+export const ExtTableBodyView = TableBodyView;
+export const ExtTransactionsView = TransactionsView;
+
 export const ExtFooterView = FooterView;
 
 /*
@@ -45,7 +48,6 @@ export const ExtDropDownList = DropDownList;
 
 */
 // Exports data file
-export const ExtDataHeadLinesText = dataHeadLinesText;
 
 export const ExtStyleBody = StyleBodyContainer;
 export const ExtStyleHeader = StyleHeader;
